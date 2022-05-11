@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="about-main float-container">
+        <div class="about-title">
+            <h2>
+                About the shop <i class="fa-solid fa-shop"></i>
+            </h2>
+        </div>
+        <div class="col-12 col-md-6 info">
+            <p>
+                E-commercify is an e-shop that started to operate in Latvia in
+                2022 and provides consumer-to-consumer sales yet
+                the best quality electronic products at affordable prices.
+                The platform usually sells products from brands with a long-established reputation and
+                a profound history of satisfied customers.
+                Some examples are: Apple, Samsung, Dell and Asus.
+            </p>
+            <p>
+                E-commercify stresses the importance of flawless customer experience and
+                closely monitor any dissatisfaction incidents.
+                We strive for the best quality, yet ensure that a client can promptly find a
+                desired product which is made possible by nurturing the platform's network.
+            </p>
+            <p class="reviews-paragraph">
+                Here are a few reviews left by our clients <i class="fa-solid fa-comments fa-large"></i> :
+            </p>
+            <div class="row">
+            <div class="col-12 col-md-12 carousel-column">
+            <div id="clients-reviews" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#clients-reviews" data-slide-to="0" class="active"></li>
+                    <li data-target="#clients-reviews" data-slide-to="1"></li>
+                    <li data-target="#clients-reviews" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="1000">
+                        <img class="img-responsive review-img d-block" src="static/carousel/review_1.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="1000">
+                        <img class="img-responsive review-img d-block" src="static/carousel/review_2.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="1000">
+                        <img class="img-responsive review-img d-block" src="static/carousel/review_3.png" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#clients-reviews" role="button" data-slide="prev">
+                    <span class="arrow carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#clients-reviews" role="button" data-slide="next">
+                    <span class="arrow carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,290 @@
+ /* Body and formatting */
+body{
+   background: #F0FFF0;
+   margin:0px;
+}
+
+.central-container{
+    display: flex;
+    overflow: auto;
+}
+
+h5{
+    font-weight:400;
+
+}
+
+h6{
+    font-weight:300;
+}
+
+/* Header */
+#header{
+   background-color:#000000 !important;
+   font-size: 13.5px;
+}
+.header{
+    color: white !important;
+}
+
+.navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* Catalog and categories*/
+.catalog{
+   width: 29%;
+   padding: 25px 15px 25px 25px;
+   float:left;
+}
+
+.catalog-header{
+  font-size: 20px;
+  margin-right:auto;
+  color: #ffffff;
+}
+
+.category{
+   text-decoration: none !important;
+   color: black !important;
+   margin-right:auto;
+}
+.category:hover{
+   color: #696969 !important;
+}
+
+#category-header{
+   background-color:#D3D3D3 !important;
+   font-weight: 500;
+   text-align: left !important;;
+}
+
+.category-icon{
+    margin-right: 10px;
+    height:16px;
+    width:20px;
+    color:#696969;
+}
+
+/*Remaining in-stock quantity*/
+.stock{
+   background-color: #A9A9A9 !important;
+}
+
+.slides{
+   padding: 25px 0px 0px 25px;
+   float: left;
+   width: 65%;
+
+}
+
+/*Search and sign-in/sign-up/sign-out/account section*/
+.search-section{
+    background-color:#D3D3D3 !important;
+}
+
+.search-logo{
+    color:white;
+}
+
+.search-button{
+    background: #A9A9A9;
+    border-color: #A9A9A9;
+}
+
+.search-button:hover{
+    background: #696969;
+}
+
+.sign-options{
+    margin-top:10px;
+    text-align:left;
+}
+
+.sign{
+    text-decoration: none !important;
+    color:#FFFFFF;
+    margin-left: 10px;
+}
+.sign:hover{
+    color:#FFFFFF;
+}
+
+
+/* Logo */
+.shop-name{
+    color: white !important;
+    font-family: Montserrat !important;
+    font-size:35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.central-container{
+    margin:20px;
+}
+
+/* Footer */
+#footer{
+    margin-top: 1rem;
+    padding: 2rem 0rem 1rem;
+    background-color:#000000 !important;
+    color:#FFFFFF;
+    text-align: center;
+    font-size: 13.5px;
+    bottom:0px;
+}
+
+.download-button{
+   font-size: 12px;
+   margin: 1rem 0rem;
+   background: #A9A9A9;
+   border-color: #A9A9A9;
+}
+
+.download-button:hover{
+   background: #696969;
+   border-color:  #696969;
+   color: #FFFFFF;
+}
+
+/* About page */
+.about-main{
+    min-height: 100%
+}
+
+.about-title{
+    text-align: center;
+    padding: 40px 0px;
+}
+
+.info{
+    margin: auto;
+}
+
+.review-img{
+    height: 300px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.reviews-paragraph{
+    padding: 10px 0px;
+    text-align:center;
+    font-weight: 600;
+}
+
+.arrow{
+    background-color: #D3D3D3 !important;
+}
+
+
+/* Sign Up*/
+.registration{
+    margin: 20px 0px;
+    text-align:center;
+    color: #A9A9A9;
+}
+
+.sign-up-form{
+    margin:auto;
+    width: 60%;
+}
+
+.sign-up-div{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sign-button{
+    background-color: #A9A9A9;
+    border-color: #A9A9A9;
+}
+
+
+/* Sign In form */
+
+.sign-in-form{
+    margin:auto;
+    width: 50vw;
+}
+
+.remember-me{
+    text-align:center;
+    margin:auto;
+    width: 50vw;
+}
+
+#submit
+
+/* Ad */
+.ad-image{
+    height: 175px !important;
+    width: 175px !important;
+}
+
+.ad-container{
+    border:thin solid #D3D3D3;
+}
+
+.ads-together{
+    padding: 25px 0px 0px 25px;
+}
+
+.ads-header{
+    height: 40px;
+    border:thin solid #D3D3D3;
+    margin: 0 0 11px 0;
+}
+
+.item-availability{
+    padding-left: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.pagination{
+    margin-top: 5px;
+    text-align: center;
+    display:block
+}
+
+.category-name{
+    padding:0;
+}
+/* Account */
+
+.my-ads{
+    margin:auto;
+}
+
+.user-title{
+    margin:10px 15px;
+}
+
+.user-hello{
+    text-align:center;
+}
+
+/* Search */
+
+.not_found_img{
+    height: 300px;
+    width: 600px;
+
+}
+
+.not-found{
+    text-align: center;
+}
+
+/* Contacts */
+
+.contacts{
+    margin-top: 10px;
+    background-color:#F0FFF0;
+    margin: auto;
+    text-align: center;
+    width: 70%;
+}
+

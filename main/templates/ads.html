@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+<! --Catalog of items -->
+    <div class="central-container row">
+        <div class="col-12 col-md-4 catalog">
+            <ul class="catalog-list list-group">
+              <li id="category-header" class="list-group-item d-flex justify-content-between align-items-center">
+                <i class="category-icon fa-solid fa-bars"></i>
+                <span class="catalog-header">Catalog</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i class="category-icon fa-solid fa-mobile-screen-button"></i>
+                <a class="category" href="{{url_for('phones')}}">Cell phones</a>
+                <span class="stock badge bg-primary rounded-pill">{{total.query.filter_by(category="Cell Phones").count()}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i class="category-icon fa-solid fa-laptop"></i>
+                <a class="category" href="{{url_for('computers')}}">Computers</a>
+                <span class="stock badge bg-primary rounded-pill">{{total.query.filter_by(category="Computers").count()}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i class="category-icon fa-solid fa-tablet-screen-button"></i>
+                <a class="category" href="{{url_for('tablets')}}">Tablets</a>
+                <span class="stock badge bg-primary rounded-pill">{{total.query.filter_by(category="Tablets").count()}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i class="category-icon fa-solid fa-tv"></i>
+                <a class="category" href="{{url_for('tv_video')}}">TV & video</a>
+                <span class="stock badge bg-primary rounded-pill">{{total.query.filter_by(category="TV&Video").count()}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i class="category-icon fa-solid fa-camera"></i>
+                <a class="category" href="{{url_for('photo_cameras')}}">Photo cameras</a>
+                <span class="stock badge bg-primary rounded-pill">{{total.query.filter_by(category="Photo Cameras").count()}}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <i class="category-icon fa-solid fa-book"></i>
+                <a class="category" href="{{url_for('e_books')}}">E-books</a>
+                <span class="stock badge bg-primary rounded-pill">{{total.query.filter_by(category="E-Books").count()}}</span>
+              </li>
+            </ul>
+        </div>
+        <div class="ads-together col-12 col-md-8 row">
+            <div class="ads-header col-12 col-md-12 row">
+                <div class="category-name col-8">
+                    <h3>{{title}}</h3>
+                </div>
+                <div class="item-availability col-4">
+                    <h6>Available products: {{total.query.filter_by(category=title).count()}}</h6>
+                </div>
+            </div>
+            {% for ad in ads.items %}
+            <div class="ad-container col-12 col-md-6 col-lg-4 container">
+                <h4>{{ ad.brand }}</h4>
+                <h5>Price: {{ ad.price }} EUR</h5>
+                <div class="ad-image" style="width: 175px;height: 175px;">
+                    <img style="width: 175px;height: 175px;" src="{{url_for('static', filename='ads_images/'+ ad.image)}}">
+                </div>
+                <h6>{{ ad.characteristics }}</h6>
+            </div>
+            {% endfor %}
+            <div class="pagination">
+                {% for page_num in ads.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                    {% if page_num %}
+                        {% if ads.page == page_num %}
+                        <a class="btn btn-dark mb-4" href="{{ url_for(url,  page=page_num)}}">{{ page_num }}</a>
+                        {% else %}
+                        <a class="btn btn-outline-dark mb-4" href="{{ url_for(url, page=page_num)}}">{{ page_num }}</a>
+                        {% endif %}
+                    {% else %}
+                        ...
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

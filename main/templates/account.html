@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="user-title">
+        <h4 class="user-hello">Hello, {{user.username}}!</h4>
+        <h5>You have {{total}} active advertisements!</h5>
+        {% if total == 0%}
+            <h5 class="user-hello">Want to post a new ad? <a href="{{url_for('new_ad')}}">New Ad</a></h5>
+        {% endif %}
+    </div>
+    <div class="my-ads col-12 row">
+    {% for ad in ads.items %}
+        <div class="ad-container col-12 col-md-6 col-lg-4 container">
+            <h4>{{ ad.brand }}</h4>
+            <h5>Price: {{ ad.price }} EUR</h5>
+            <div class="ad-image" style="width: 175px;height: 175px;">
+                <img style="width: 175px;height: 175px;" src="{{url_for('static', filename='ads_images/'+ ad.image)}}">
+            </div>
+            <h6>{{ ad.characteristics }}</h6>
+            <form action="{{ url_for('delete_ad', ad_id=ad.id) }}" method="POST">
+                <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="pagination">
+        {% for page_num in ads.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+                {% if ads.page == page_num %}
+                <a class="btn btn-dark mb-4" href="{{ url_for('account',  page=page_num,  username=current_user.username)}}">{{ page_num }}</a>
+                {% else %}
+                <a class="btn btn-outline-dark mb-4" href="{{ url_for('account', page=page_num, username=current_user.username)}}">{{ page_num }}</a>
+                {% endif %}
+            {% else %}
+                ...
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock content %}

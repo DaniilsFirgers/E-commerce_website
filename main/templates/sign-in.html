@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="registration">
+      <h3>
+        Log In
+      </h3>
+    </div>
+    <div class="sign-in-form content-section">
+        <form method="POST" action="" class="row">
+          {{ form.hidden_tag() }}
+          <div class="col-12 col-md-12">
+            {{form.email.label(class="form-control-label")}}
+            {% if form.email.errors %}
+                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+              {{form.email(class="form-control form-control-lg")}}
+            {% endif %}
+          </div>
+          <div class="col-12 col-md-12">
+            {{form.password.label(class="form-control-label")}}
+            {% if form.password.errors %}
+                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+              {{form.password(class="form-control form-control-lg")}}
+            {% endif %}
+          </div>
+          <div class="remember-me col-12 col-md-12">
+              {{ form.remember(class='form-check-input')}}
+              {{ form.remember.label(class='form-check-label')}}
+          </div>
+          <div class="sign-up-div col-12">
+            {{form.submit(class="sign-button btn btn-dark")}}
+          </div>
+        </form>
+    </div>
+    <div class="sign-in-form">
+    <small class="text-muted">
+        Need An Account <a class="ml-2" href="{{ url_for('register')}}">Sign Up Now</a>
+    </small>
+    </div>
+{% endblock content %}

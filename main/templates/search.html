@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if ads.items|length != 0 %}
+<div class="my-ads col-12 row">
+    <div class="user-title">
+        <h4>You searched for {{searched}}</h4>
+    </div>
+    {% for ad in ads.items %}
+    <div class="ad-container col-12 col-md-6 col-lg-4 container">
+        <h4>{{ ad.brand }}</h4>
+        <h5>Price: {{ ad.price }} EUR</h5>
+        <div class="ad-image" style="width: 175px;height: 175px;">
+            <img style="width: 175px;height: 175px;" src="{{url_for('static', filename='ads_images/'+ ad.image)}}">
+        </div>
+        <h6>{{ ad.characteristics }}</h6>
+    </div>
+    {% endfor %}
+    <div class="pagination">
+        {% for page_num in ads.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+                {% if ads.page == page_num %}
+                <a class="btn btn-dark mb-4" href="{{ url_for('search',  page=page_num)}}">{{ page_num }}</a>
+                {% else %}
+                <a class="btn btn-outline-dark mb-4" href="{{ url_for('search', page=page_num)}}">{{ page_num }}</a>
+                {% endif %}
+            {% else %}
+                ...
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+    <div class="not-found">
+        <h4 class="user-title">You searched for {{searched}}</h4>
+        <h5>Oooops, nothing found. Please try again with some different keywords!</h5>
+        <img class="not_found_img img-responsive w-100" src="static/404_not_found/not_found.png">
+    </div>
+{% endif %}
+{% endblock content %}
